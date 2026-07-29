@@ -37,7 +37,7 @@ copyright:
   # Displayed in the footer
   brief: All rights reserved.
   verbose: >-
-    Unauthorized copying, modification, distribution, or use of these files and information, via any medium, is strictly prohibited.
+    Unauthorized copying, modification, distribution, or use of these files and information, via any medium, is strictly prohibited. The limitation does not apply to theme Chirpy files.
 
 meta: Using the :THEME theme for :PLATFORM.
 
