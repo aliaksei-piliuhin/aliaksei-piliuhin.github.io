@@ -4,7 +4,7 @@ date: 2026-07-01 10:00:00 +0800
 categories: [UE5, C++, UMG, Adobe Illustrator, Figma]
 render_with_liquid: false
 pin: true
-image: /assets/inventory/preview.png
+image: /assets/inventory/post.png
 ---
 
 Я прошел собственный путь от создания дизайна до написания логики и оптимизации игрового UI, чтобы детально разобраться во всем цикле разработки интерфейсов.
