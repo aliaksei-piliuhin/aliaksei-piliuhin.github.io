@@ -1,6 +1,5 @@
 ---
 title: Advanced UI Inventory
-author: Алексей Пилюгин
 date: 2026-07-01 10:00:00 +0800
 categories: [UE5, UMG]
 render_with_liquid: false
