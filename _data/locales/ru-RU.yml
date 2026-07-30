@@ -13,14 +13,14 @@ tabs:
   home: Работы
   categories: Категории
   tags: Теги
-  archives: Архивы
+  archives: Архив
   about: Обо мне
 
 # the text displayed in the search bar & search results
 search:
   hint: поиск
   cancel: Отмена
-  no_results: Ничего не найдено :(
+  no_results: Упс! Ничего не найдено ¯\_(ツ)_/¯
 
 panel:
   lastmod: Недавно Обновлено
@@ -62,7 +62,7 @@ post:
   words: слов
   pageview_measure: просмотров
   read_time:
-    unit: мин
+    unit: мин.
     prompt: чтения
   edit: Edit this post
   relate_posts: Further Reading
@@ -73,18 +73,15 @@ post:
     copy_code:
       succeed: Скопировано!
     share_link:
-      title: Копировать ссылку
-      succeed: Ссылка скопирована!
+      title: Скопировать ссылку
+      succeed: Ссылка успешно скопирована!
 
 # Date time format.
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
 df:
   post:
-    strftime: "%b %e, %Y"
-    dayjs: "ll"
-  archives:
-    strftime: "%b"
-    dayjs: "MMM"
+    strftime: "%d.%m.%Y"
+    dayjs: "DD.MM.YYYY"
 
 # categories page
 categories:
