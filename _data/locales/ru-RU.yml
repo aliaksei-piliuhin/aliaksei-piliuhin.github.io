@@ -73,8 +73,8 @@ post:
     copy_code:
       succeed: Скопировано!
     share_link:
-      title: Скопировать ссылку
-      succeed: Ссылка успешно скопирована!
+      title: Копировать
+      succeed: Ссылка скопирована!
 
 # Date time format.
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
