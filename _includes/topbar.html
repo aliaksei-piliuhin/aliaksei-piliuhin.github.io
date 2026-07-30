@@ -6,22 +6,16 @@
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
   >
     <nav id="breadcrumb" aria-label="Breadcrumb">
-      {% if page.layout == 'home' %}
-        <!-- index page -->
-        <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
-
-      {% elsif page.layout == 'post' %}
-        <!-- Post pages: explicitly build Home > Post Name -->
+      {% if page.layout == 'post' %}
+        <!-- ONLY show breadcrumbs on blog posts -->
         <span>
           <a href="{{ '/' | relative_url }}">
             {{- site.data.locales[include.lang].tabs.home | capitalize -}}
           </a>
         </span>
         <span>{{ page.title }}</span>
-
       {% else %}
-        <!-- Standalone layout pages (About, Category indexing, Archive, etc.) -->
-        <span>{{ page.title }}</span>
+        <!-- Hidden on Home, Categories, Tags, and all other pages -->
       {% endif %}
     </nav>
     <!-- endof #breadcrumb -->
