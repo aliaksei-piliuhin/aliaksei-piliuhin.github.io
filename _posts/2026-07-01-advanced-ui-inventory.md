@@ -31,5 +31,5 @@ _Дизайн инвентаря, полностью разработан мно
 
 Я разработал архитектуру на базе паттерна Model-View-Controller. Model является хранителем данных и мостом между логикой инвентаря (Controller) и визуальным представлением (View). Это полностью Event-driven система, где связь осуществляется через делегаты, что исключает использование Tick и предотвращает появление запутанных зависимостей.
 
-> The benefit of reading the author information from the file `_data/authors.yml`{: .filepath } is that the page will have the meta tag `twitter:creator`, which enriches the [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution) and is good for SEO.
+> Весь проект  of reading the author information from the file `_data/authors.yml`{: .filepath } is that the page will have the meta tag `twitter:creator`, which enriches the [Twitter Cards](https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started#card-and-content-attribution) and is good for SEO.
 {: .prompt-info }
