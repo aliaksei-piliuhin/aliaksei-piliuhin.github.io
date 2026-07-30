@@ -14,7 +14,7 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Алексей Пилюгин Портфолио # the main title
+title: Алексей Пилюгин # the main title
 
 tagline: Unreal UI Developer # it will display as the subtitle
 
