@@ -30,9 +30,9 @@ panel:
 copyright:
   # Shown at the bottom of the post
   license:
-    template: This post is licensed under :LICENSE_NAME by the author.
-    name: Copyright
-    link:
+    template: © 2026 :LICENSE_NAME. All rights reserved.
+    name: Aliaksei Piliuhin
+    link: https://www.linkedin.com/in/alex-piliuhin
 
   # Displayed in the footer
   brief: All rights reserved.
