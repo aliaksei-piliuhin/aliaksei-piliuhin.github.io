@@ -1,7 +1,7 @@
 ---
 title: First-Person Interaction System 
 date: 2026-07-01 10:00:00 +0800
-categories: [UE5, C++, UMG, Animation Blueprints, IK]
+categories: [UE5, C++, UMG, Anim BP, IK]
 render_with_liquid: false
 ---
 
