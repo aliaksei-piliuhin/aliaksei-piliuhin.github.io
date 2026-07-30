@@ -3,9 +3,14 @@ title: Advanced UI Inventory
 date: 2026-07-01 10:00:00 +0800
 categories: [UE5, C++, UMG, Adobe Illustrator, Figma]
 render_with_liquid: false
+pin: true
+image: /assets/inventory/preview
 ---
 
-This tutorial will guide you on how to write a post in the _Chirpy_ template, and it's worth reading even if you've used Jekyll before, as many features require specific variables to be set.
+Я прошел собственный путь от создания дизайна до написания логики и оптимизации игрового UI, чтобы детально разобраться во всем цикле разработки интерфейсов.
+
+![img-description](/assets/inventory/img1)
+_Image Caption_
 
 ## Naming and Path
 
