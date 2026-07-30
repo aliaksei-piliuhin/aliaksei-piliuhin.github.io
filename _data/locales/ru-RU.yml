@@ -23,8 +23,8 @@ search:
   no_results: Упс! Ничего не найдено ¯\_(ツ)_/¯
 
 panel:
-  lastmod: Недавно Обновлено
-  trending_tags: Популярные Теги
+  lastmod: Недавно обновлено
+  trending_tags: Популярные теги
   toc: Содержание
 
 copyright:
@@ -80,8 +80,11 @@ post:
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
 df:
   post:
-    strftime: "%d.%m.%Y"
-    dayjs: "DD.MM.YYYY"
+    strftime: "%b %e, %Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
 
 # categories page
 categories:
