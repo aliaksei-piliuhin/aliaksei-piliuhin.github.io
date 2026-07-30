@@ -4,6 +4,11 @@ layout: default
 
 {% include lang.html %}
 
+{% assign title = site.data.locales[lang].tabs.home | default: page.title %}
+    <h1 class="dynamic-title">
+      {{ title }}
+    </h1>
+
 {% assign all_pinned = site.posts | where: 'pin', 'true' %}
 {% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
