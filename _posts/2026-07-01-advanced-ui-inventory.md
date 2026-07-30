@@ -1,8 +1,8 @@
 ---
-title: Writing a New Post
-author: cotes
-date: 2019-08-08 14:10:00 +0800
-categories: [Blogging, Tutorial]
+title: Advanced UI Inventory
+author: Алексей Пилюгин
+date: 2026-07-01 10:00:00 +0800
+categories: [UE5, UMG]
 render_with_liquid: false
 ---
 
