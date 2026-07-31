@@ -15,7 +15,7 @@ render_with_liquid: false
 
 Использование `Widget Component` создает для каждого маркера изолированный контейнер, из-за чего виджеты не батчатся, и каждый новый такой маркер добавляет минимум **+1 draw call**. Дополнительно каждый маркер запускает отдельный пересчет из 3D координат в 2D.
 
-![Desktop View](/assets/tracker/img1.png){: width="1920" height="1025" .w-50 .right}
+![Desktop View](/assets/tracker/img1.png){: width="1920" height="1025" .w-50 .left}
 ![Desktop View](/assets/tracker/img2.png){: width="221" height="260" .w-50 .right}
 
 ### Решение
@@ -26,5 +26,5 @@ render_with_liquid: false
 
 Независимо от того сколько активных маркеров находится на экране, все они отрисовываются за **1 draw call**. Плюс я получил полный контроль над логикой пересчета координат, созданием и отображением маркеров.
 
-![Desktop View](/assets/tracker/img3.png){: width="1920" height="1025" .w-50 .right}
+![Desktop View](/assets/tracker/img3.png){: width="1920" height="1025" .w-50 .left}
 ![Desktop View](/assets/tracker/img4.png){: width="223" height="269" .w-50 .right}
