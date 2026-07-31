@@ -4,6 +4,7 @@ date: 2026-07-01 10:00:00 +0800
 categories: [UE5, C++, UMG, Adobe Illustrator, Figma]
 render_with_liquid: false
 pin: true
+mermaid: true
 image: /assets/inventory/post.png
 ---
 
