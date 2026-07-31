@@ -2,10 +2,12 @@
 title: First-Person Interaction System 
 date: 2026-07-01 10:00:00 +0800
 categories: [UE5, C++, UMG, Anim BP, IK]
-render_with_liquid: false
+render_with_liquid: true
 ---
 
 Система взаимодействия с игровым миром, подбор предметов, перенос ящиков.
+
+{% include embed/youtube.html id='H_OLR5n1BI8' %}
 
 ### Функционал
 - Настроенный first-person контроллер с ходьбой, бегом и покачиванием камеры.
