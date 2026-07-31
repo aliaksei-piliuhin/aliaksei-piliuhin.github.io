@@ -16,10 +16,10 @@ timezone: Europe/Minsk
 
 title: Алексей Пилюгин # the main title
 
-tagline: Unreal UI Developer # it will display as the subtitle
+tagline: UI Unreal Engine Developer # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Портфолио
+  Портфолио UI Unreal Engine Developer
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
