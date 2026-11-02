@@ -8,55 +8,55 @@ mermaid: true
 image: /assets/inventory/post.png
 ---
 
-Я прошел собственный путь от создания дизайна до написания логики и оптимизации игрового UI, чтобы детально разобраться во всем цикле разработки интерфейсов.
+I went through the entire process from designing the game UI to writing its logic and optimizing it, to get a deeper understanding of the full interface development cycle.
 
-### Начало пути
+### Getting Started
 
-Первые бумажные наброски постепенно обретали форму и стиль в **Adobe Illustrator**. Несколько долгих итераций и финальная шлифовка в **Figma**, привели меня к варианту, который вы видите ниже.
+My initial paper sketches gradually took shape and developed their style in Adobe Illustrator. After several lengthy iterations and a final polish in Figma, I arrived at the version you see below.
 
 ![Desktop View](/assets/inventory/img1.png){: width="1920" height="1080" }
-_Дизайн инвентаря, полностью разработан мной в **Adobe Illustrator** (за исключением фонового изображения)_
+_The inventory design was created entirely by me in **Adobe Illustrator**, except for the background image_
 
-Я экспортировал каждый элемент по-отдельности и начал собирать экран в **Unreal Engine**. Нужно было понять какие элементы лучше объединить в текстурные атласы и сравнить количество вызовов отрисовки до и после оптимизации. Подробнее об этом я расскажу ниже, а сейчас немного про функционал и логику моего инвентаря.
+I exported each element separately and started putting the screen together in Unreal Engine. I wanted to figure out which elements would benefit from being combined into texture atlases and compare the number of draw calls before and after optimization. I'll go into more detail about that later, but first, let's take a look at the inventory's features and logic.
 
-### Функционал
-- Система категорий с двойным списком предметов. Каждая основная вкладка категории имеет две подкатегории.
-- Кастомный плавный скролл, который управляет двумя списками предметов одновременно.
-- Универсальная навигация по предметам инвентаря с поддержкой мыши, клавиатуры и геймпада.
-- Две панели быстрого доступа, в которые можно назначить предметы из инвентаря.
-- Гибкая Drag & Drop логика с перемещением и обменом (swap) предметов между ячейками.
-- Панель с подробным описанием выделенного предмета.
-- Полная поддержка встроенной системы локализации Unreal.
+### Features
+- A category system with two item lists. Each main category tab has two subcategories.
+- Custom smooth scrolling that controls both item lists simultaneously.
+- Universal inventory navigation with support for mouse, keyboard, and gamepad.
+- Two quick-access bars where items from the inventory can be assigned.
+- Flexible Drag & Drop logic, allowing items to be moved and swapped between slots.
+- A detailed description panel for the selected item.
+- Full support for Unreal Engine's built-in localization system.
 
 {% include embed/youtube.html id='89ZG6tlMDCQ' %}
 
-### Архитектура и логика
+### Architecture and Logic
 
-Я разработал архитектуру на базе паттерна `Model-View-Controller`. `Model` является хранителем данных и мостом между логикой инвентаря `Controller` и визуальным представлением `View`. Это полностью **Event-driven** система, где связь осуществляется через делегаты, что исключает использование `Tick` и предотвращает появление запутанных зависимостей.
+I designed the architecture around the `Model-View-Controller` pattern. The `Model` holds the data and acts as a bridge between the inventory logic `(Controller)` and its visual representation `(View)`. The entire system is **Event-driven**, with communication handled through delegates. This eliminates the need for `Tick` and helps prevent tangled dependencies.
 
-> Весь проект построен на компонентном подходе. Эта система позволяет регистрировать только те компоненты, которые необходимы для конкретного уровня. Если на текущем уровне не зарегистрирован компонент инвентаря, то соответствующая вкладка в _Player Menu_ (единая панель с вкладками: Карта, Квесты, Инвентарь, Журнал, Навыки) не создается.
+> The entire project is built around a component-based approach. This system allows me to register only the components needed for a particular level. If the inventory component isn't registered on the current level, its corresponding tab won't be created in the _Player Menu_ (a unified panel with tabs for Map, Quests, Inventory, Journal, and Skills).
 {: .prompt-info }
 
 ![Desktop View](/assets/inventory/img2.png){: width="600" height="382" .w-50 .right}
-Таким образом у меня есть `Controller`, `Model` и `View` инвентаря. При этом у каждой ячейки есть своя модель данных. Ячейка может быть пустой, а может содержать данные предмета. Такой подход позволяет гибко менять предметы в ячейках и точечно обновлять вьюшки без необходимости обновления всего списка.
+This gives me separate `Controller`, `Model` and `View` components for the inventory. Each slot also has its own data model. A slot can either be empty or contain item data. This approach makes it easy to move items between slots and update individual slot widgets without having to refresh the entire list.
 
-К слову, сам список предметов это `TileView`, который позволяет хранить большое количество элементов, так как виджеты ячеек переиспользуются при скролле. Это снижает нагрузку на память и сборщик мусора (Garbage Collector).
+The item list itself is a `TileView`, which can handle a large number of elements because slot widgets are reused as you scroll. This reduces memory usage and the workload of the Garbage Collector.
 
-### Оптимизация
+### Optimization
 
-Ссылки на иконки предметов в `Data Table` реализованы через мягкие указатели `TSoftObjectPtr`. Благодаря этому при инициализации таблицы предметов в память не загружаются все текстуры. Подгрузка необходимых предметов происходит асинхронно при открытии инвентаря. 
+Item icon references in the `Data Table` are implemented using soft object pointers `(TSoftObjectPtr)`. This means that initializing the item table doesn't load all textures into memory at once. Instead, the required assets are loaded asynchronously when the inventory is opened.
 
-Чтобы минимизировать количество _draw call’ов_ и смены _render state’ов_, а также чтобы избежать подгрузки каждого изображения по-отдельности, я создал несколько текстурных атласов. Использование атласов уменьшило количество вызовов отрисовки в 2 раза.
+To minimize the number of _draw calls_ and _render state changes_, nd to avoid loading each image separately, I created several texture atlases. Using these atlases cut the number of draw calls in half.
 
 ![Desktop View](/assets/inventory/img3.png){: width="267" height="88" .w-50 .right}
 ![Desktop View](/assets/inventory/img4.png){: width="600" height="158" .w-50 .right}
-Для некоторых иконок вместо растровых изображений я создал кастомный шрифт. В отличие от обычных текстур, хранящих цвет текстелей, `SDF (Signed Distance Field)` хранит расстояние до границы контура фигуры. Это позволяет видеокарте интерполировать значения расстояния при рендеринге, сохраняя четкость изображения при любом масштабе экрана и снижая потребление видеопамяти.
+For some icons, I created a custom font instead of using raster images. Unlike regular textures, which store color values for each texel, `SDF (Signed Distance Field)` stores the distance to the shape's outline. This allows the GPU to interpolate distance values during rendering, keeping the image sharp at any screen scale while reducing video memory usage.
 
-### Роадмап
-- Визуальная реакция ячеек при Drag & Drop
-- Дополнительные кнопки для действий с предметами и панель подсказок с key binding'ами внизу экрана
-- Полноценная поддержка геймпада
-- Новые UI-анимации
-- Интеграция эффектов (particles)
-- Реализация логики стейтов (для умного возвращения в предыдущие экраны игры)
+### Roadmap
+- Visual feedback for slots during Drag & Drop
+- Additional buttons for item actions, along with an on-screen hints panel showing key bindings at the bottom of the screen
+- Full gamepad support
+- New UI animations
+- Particle effects integration
+- State logic to intelligently return to previously visited game screens (Common UI)
 
