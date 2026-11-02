@@ -6,7 +6,7 @@ theme: jekyll-theme-chirpy
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: en-EN #ru-RU en-EN
+lang: en-EN #ru-RU
 
 # Change to your timezone › https://zones.arilyn.cc
 timezone: Europe/Minsk
@@ -16,7 +16,7 @@ timezone: Europe/Minsk
 
 title: Alex Piliuhin # the main title
 
-tagline: C++ UI Programmer | Unreal Engine | UMG | Making Games with Love & a Sense of Beauty #UI Unreal Engine Developer  it will display as the subtitle
+tagline: UI Unreal Engine Developer  #it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Portfolio
