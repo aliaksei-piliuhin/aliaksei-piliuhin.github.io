@@ -5,26 +5,26 @@ categories: [UE5, C++, UMG]
 render_with_liquid: false
 ---
 
-Система трекинга UI-маркеров, привязанных к 3D объектам.
+A custom tracking system for UI markers attached to 3D objects.
 
-### Задача
+### The Goal
 
-Реализовать UI-маркеры для интерактивных предметов в 3D пространстве. Маркеры всегда смотрят в сторону камеры и пропорционально масштабируются в зависимости от расстояния до нее, т. е. маркеры всегда выглядят плоскими на экране и сохраняют единый размер.
+The goal was to implement UI markers for interactive objects in 3D space. The markers always face the camera and scale proportionally based on their distance from it. This ensures they always appear flat on the screen and maintain a consistent visual size.
 
-### Проблема
+### The Problem
 
-Использование `Widget Component` создает для каждого маркера изолированный контейнер, из-за чего виджеты не батчатся, и каждый новый такой маркер добавляет минимум **+1 draw call**. Дополнительно каждый маркер запускает отдельный пересчет из 3D координат в 2D.
+Using `Widget Component` creates a separate isolated container for each marker. As a result, the widgets cannot be batched, and each new marker adds at least **+1 draw call**. On top of that, each marker performs its own 3D-to-2D coordinate transformation.
 
 ![Desktop View](/assets/tracker/img1.png){: width="1920" height="1025" }
 ![Desktop View](/assets/tracker/img2.png){: width="221" height="260" }
 
-### Решение
+### The Solution
 
-Я разработал кастомный трекер таких виджетов. Он централизованно для всех маркеров в радиусе видимости пересчитывает позиции из `world space` в `screen space` и хранит их в едином UI-контейнере, что позволяет виджетам батчиться. А чтобы исключить постоянное создание и удаление элементов, я использую `widget pool` и переиспользую уже созданные виджеты.
+I developed a custom tracker for these widgets. It centrally handles all visible markers, converting their positions from `world space` to `screen space` and storing them inside a shared UI container. This allows the widgets to be batched together. To avoid constantly creating and destroying UI elements, I also implemented a `widget pool` that reuses previously created widgets.
 
-### Результат
+### The Result
 
-Независимо от того сколько активных маркеров находится на экране, все они отрисовываются за **1 draw call**. Плюс я получил полный контроль над логикой пересчета координат, созданием и отображением маркеров.
+Regardless of how many active markers are on screen, they are all rendered in just **1 draw call**. I also gained full control over coordinate transformations, widget creation, and marker visibility.
 
 ![Desktop View](/assets/tracker/img3.png){: width="1920" height="1025" }
 ![Desktop View](/assets/tracker/img4.png){: width="223" height="269" }
