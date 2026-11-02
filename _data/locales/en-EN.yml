@@ -20,7 +20,7 @@ tabs:
 search:
   hint: search
   cancel: Cancel
-  no_results: Oops! No results found.
+  no_results: Oops! No results found ¯\_(ツ)_/¯
 
 panel:
   lastmod: Recently Updated
@@ -30,9 +30,9 @@ panel:
 copyright:
   # Shown at the bottom of the post
   license:
-    template: This post is licensed under :LICENSE_NAME by the author.
-    name: CC BY 4.0
-    link: https://creativecommons.org/licenses/by/4.0/
+    template: © 2026 :LICENSE_NAME. All rights reserved.
+    name: Aliaksei Piliuhin
+    link: https://www.linkedin.com/in/alex-piliuhin
 
   # Displayed in the footer
   brief: All rights reserved.
@@ -42,7 +42,7 @@ copyright:
 meta: Using the :THEME theme for :PLATFORM.
 
 not_found:
-  statement: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
+  statement: Sorry, that URL is pointing to something that doesn't exist (º _ º ).
 
 notification:
   update_found: New content available
@@ -68,8 +68,8 @@ post:
   relate_posts: Further Reading
   share: Share
   button:
-    next: Newer
-    previous: Older
+    next: Next post
+    previous: Previous post
     copy_code:
       succeed: Copied!
     share_link:
