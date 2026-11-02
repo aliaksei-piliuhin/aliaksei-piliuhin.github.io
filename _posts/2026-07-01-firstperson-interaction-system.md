@@ -5,12 +5,12 @@ categories: [UE5, C++, UMG, Anim BP, IK]
 render_with_liquid: true
 ---
 
-Система взаимодействия с игровым миром, подбор предметов, перенос ящиков.
+A world interaction system that allows player to interact with objects, pick up items, and carry crates.
 
 {% include embed/youtube.html id='H_OLR5n1BI8' %}
 
-### Функционал
-- Настроенный first-person контроллер с ходьбой, бегом и покачиванием камеры.
-- Система взаимодействия, подбор предметов и перенос ящиков.
-- Плавный наклон к предмету и позиционирование руки через IK.
-- UI-подсказки при взаимодействии с объектами и прогресс-бар для действий с удержанием кнопки.
+### Features
+- A custom first-person controller with walking, running, and camera shaking.
+- An interaction system for picking up items and carrying crates.
+- Smooth leaning towards objects and hand positioning using IK.
+- UI tooltips when interacting with objects, along with a progress bar for hold-to-interact actions.
