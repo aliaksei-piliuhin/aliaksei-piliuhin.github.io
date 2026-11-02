@@ -16,10 +16,7 @@ timezone: Europe/Minsk
 
 title: Alex Piliuhin # the main title
 
-tagline:
-  C++ UI Programmer
-  Unreal Engine | UMG
-  Making Games with Love & a Sense of Beauty #it will display as the subtitle
+tagline: C++ UI Programmer\nUnreal Engine | UMG\nMaking Games with Love & a Sense of Beauty #it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Portfolio
